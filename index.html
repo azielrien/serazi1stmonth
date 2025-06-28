@@ -1,0 +1,100 @@
+<!--
+  Sweet & Wholesome Scrapbook — Monthsarry Gift
+  • mobile‑friendly  • collage style  • working pop‑up notes
+  FINAL BUILD for GitHub Pages
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Serazi 1st Win!</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+:root{
+  --grid: repeating-linear-gradient(0deg,rgba(255,213,128,.2) 0 1px,transparent 1px 25px),
+          repeating-linear-gradient(90deg,rgba(255,213,128,.2) 0 1px,transparent 1px 25px);
+  --bg:#fffdf5;--accent:#ffb347;--note:#ffffffee;--shadow:rgba(0,0,0,.1)
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Handlee',cursive;background:var(--grid),var(--bg);color:#444;text-align:center;padding-bottom:80px}
+/* intro */
+.intro{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:40px 20px}
+.intro h1{font-size:2.3em;color:var(--accent);margin-bottom:14px}
+.intro p{font-size:1.1em;max-width:480px;line-height:1.6}
+.scroll-btn{margin-top:34px;padding:12px 26px;font-size:1em;background:var(--accent);color:#fff;border:none;border-radius:22px;cursor:pointer;transition:background .3s}
+.scroll-btn:hover{background:#e69c34}
+/* gallery */
+h2{margin:40px 0 28px;color:var(--accent)}
+.gallery{display:flex;flex-wrap:wrap;gap:26px;justify-content:center;padding:0 20px;scroll-margin-top:90px}
+.card{width:150px;height:150px;border-radius:10px;overflow:hidden;box-shadow:0 4px 12px var(--shadow);cursor:pointer;position:relative;transform:rotate(var(--angle));transition:transform .2s ease;animation:floaty 4.5s ease-in-out infinite}
+.card:hover{transform:rotate(var(--angle)) scale(1.06)}
+.card img{width:100%;height:100%;object-fit:cover}
+.card::after{content:"";position:absolute;top:-16px;left:50%;transform:translateX(-50%) rotate(-2deg);width:72px;height:30px;background:url('https://raw.githubusercontent.com/raaaquel/static-assets/main/tape-sticker.png') center/contain no-repeat}
+/* overlay */
+#overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:.3s;z-index:99}
+#overlay.active{opacity:1;pointer-events:auto}
+.note-box{background:var(--note);padding:30px 26px;border-radius:12px;max-width:330px;white-space:pre-line;box-shadow:0 0 18px var(--shadow)}
+.close{margin-top:18px;font-weight:bold;color:var(--accent);cursor:pointer}
+/* closing */
+.closing{text-align:center;padding:60px 20px;background:#fffbe8;font-size:1.2em;color:#6a4e32;line-height:1.6;font-style:italic}
+/* animations */
+@keyframes floaty{0%,100%{transform:rotate(var(--angle)) translateY(0)}50%{transform:rotate(var(--angle)) translateY(-6px)}}
+@media(max-width:480px){.intro h1{font-size:1.8em}.intro p{font-size:1em}.scroll-btn{font-size:.9em;padding:10px 22px}.card{width:120px;height:120px}}
+</style>
+</head>
+<body>
+<!-- INTRO -->
+<section class="intro">
+  <h1>Serazi 1st Win!</h1>
+  <p>To celebrate Serazi’s very first win, here’s a tiny scrapbook of the ten ways Aziel keeps falling for Seraphina.</p>
+  <button class="scroll-btn" onclick="document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">Open Scrapbook 💌</button>
+</section>
+
+<!-- GALLERY -->
+<h2 id="gallery">10 Reasons Aziel Loves Seraphina</h2>
+<section class="gallery">
+  <!-- 1 -->
+  <div class="card" style="--angle:-6deg" data-note="Noodles and noodles — Sera and Zizi finally had noodles together!\n\nThat day, Zizi only remembered to take a photo of Sera eating, because she looked so adorably focused. Zizi kind of wished he could become the noodle bowl in Sera’s hands, just so Sera could be happy eating noodles — and Zizi could be the one holding her joy."><img src="https://i.imgur.com/ir7U1la.jpg" alt="1"></div>
+  <!-- 2 -->
+  <div class="card" style="--angle:5deg" data-note="Zizi thinks Sera is cutest when she asks for chocolate bread — so much that he sometimes wishes he could become chocolate just to keep her smiling all day."><img src="https://i.imgur.com/QluV8U5.jpg" alt="2"></div>
+  <!-- 3 -->
+  <div class="card" style="--angle:-4deg" data-note="Sera loves angry‑bunny videos. Zizi loves the way her cheeks flush when he calls her cuter than any bunny on screen — and that makes him fall even harder."><img src="https://i.imgur.com/M0bDC5k.jpg" alt="3"></div>
+  <!-- 4 -->
+  <div class="card" style="--angle:7deg" data-note="Late‑night walk, tough day, and Sera retelling the entire plot of *Barbie & the Magic of Pegasus*. In that moment Zizi promised to be her safest place, always."><img src="https://i.imgur.com/NyaWDx3.jpg" alt="4"></div>
+  <!-- 5 -->
+  <div class="card" style="--angle:-3deg" data-note="Serious Sera is… unexpectedly sexy. It makes Zizi want to tease her endlessly — right up until it ends in a stolen kiss (she knows the one)."><img src="https://i.imgur.com/xnkXFGN.jpg" alt="5"></div>
+  <!-- 6 -->
+  <div class="card" style="--angle:4deg" data-note="If Sera were edible, she’d taste like chocolate milk: sweet, comforting, and impossible to have just once."><img src="https://i.imgur.com/yBOnKOe.jpg" alt="6"></div>
+  <!-- 7 -->
+  <div class="card" style="--angle:2deg" data-note="Sera doesn’t get why Zizi calls her cute so often. It’s not the looks — it’s the way she feels like a warm hug on a rainy day (even half‑asleep with crumbs on her lips)."><img src="https://i.imgur.com/0M8S8CQ.jpg" alt="7"></div>
+  <!-- 8 -->
+  <div class="card" style="--angle:-5deg" data-note="One photo of Sera’s plushies can undo Zizi’s whole exhausting day. How does she have that power?"><img src="https://i.imgur.com/K3AL9k2.jpg" alt="8"></div>
+  <!-- 9 -->
+  <div class="card" style="--angle:6deg" data-note="If Zizi is honest: he wants to be everything for Sera — the person she laughs with, comes home to, and cries with if needed."><img src="https://i.imgur.com/WcM6fut.jpg" alt="9"></div>
+  <!-- 10 -->
+  <div class="card" style="--angle:-2deg" data-note="Her playful sparkle drives Zizi crazy in the best way. It’s so dazzling he wants to hide her from the world and keep the glow to himself."><img src="https://i.imgur.com/jCsyPw8.jpg" alt="10"></div>
+</section>
+
+<!-- CLOSING -->
+<section class="closing">and that’s a wrap — until next month 🌞<br>the conclusion: Zizi loves Sera the way a sunflower follows the sun 🌻</section>
+
+<!-- OVERLAY -->
+<div id="overlay"><div class="note-box"><p id="noteText"></p><div class="close" id="closeBtn">Close</div></div></div>
+
+<script>
+  const cards   = document.querySelectorAll('.card');
+  const overlay = document.getElementById('overlay');
+  const noteTxt = document.getElementById('noteText');
+  const close   = document.getElementById('closeBtn');
+
+  cards.forEach(c=>c.addEventListener('click',()=>{
+    noteTxt.innerText = c.dataset.note.replace(/\\n/g, "\n");
+    overlay.classList.add('active');
+  }));
+
+  close.addEventListener('click',()=>overlay.classList.remove('active'));
+  overlay.addEventListener('click',e=>{if(e.target===overlay)overlay.classList.remove('active')});
+</script>
+</body>
+</html>
